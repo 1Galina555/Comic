@@ -1,3 +1,3 @@
-public interface inhut {
-    void input();
+public interface input {
+    boolean input();
 }
