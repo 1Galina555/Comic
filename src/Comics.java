@@ -1,12 +1,128 @@
-public class Comics
+import java.io.Serializable;
+import java.util.Date;
+
+public class Comics implements Serializable
 {
-    String name_comic;
-    String name_fio_author;
-    String publishing_houses;
-    Long pages;
-    String genre;
-    int year;
-    int price;
-    int sale;
-    boolean continuation;
+   private String name_comic;//название комикса
+     private String name_fio_author;//данные автора
+     private String publishing_houses;//название издания
+    private Long pages;//кол-во страниц комикса
+    private String genre;//жанр
+     private int year;//год публикации
+    private int price;//себестоимость
+    private int sale;//цена
+     private boolean continuation;/// является ли комикс продолжением другого или имеет части
+    private  int getSale;//кол-во продаж этого комикса
+    private int num;//кол-во комиксов в наличии
+    private Date dateSale;
+    public Comics(String name_comic, String name_fio_author, String publishing_houses, Long pages, String genre, int year, int price, int sale, boolean continuation, int getSale,int num,Date dateSale){
+        this.name_comic=name_comic;
+        this.name_fio_author=name_fio_author;
+        this.publishing_houses=publishing_houses;
+        this.pages=pages;
+        this.genre=genre;
+        this.year=year;
+        this.price=price;
+        this.sale=sale;
+        this.continuation=continuation;
+        this.getSale=getSale;
+        this.num=num;
+        this.dateSale=dateSale;
+    }
+
+    public String getName_comic() {
+        return name_comic;
+    }
+
+    public void setName_comic(String name_comic) {
+        this.name_comic = name_comic;
+    }
+
+    public String getName_fio_author() {
+        return name_fio_author;
+    }
+
+    public void setName_fio_author(String name_fio_author) {
+        this.name_fio_author = name_fio_author;
+    }
+
+    public String getPublishing_houses() {
+        return publishing_houses;
+    }
+
+    public void setPublishing_houses(String publishing_houses) {
+        this.publishing_houses = publishing_houses;
+    }
+
+    public Long getPages() {
+        return pages;
+    }
+
+    public void setPages(Long pages) {
+        this.pages = pages;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getSale() {
+        return sale;
+    }
+
+    public void setSale(int sale) {
+        this.sale = sale;
+    }
+
+    public boolean isContinuation() {
+        return continuation;
+    }
+
+    public void setContinuation(boolean continuation) {
+        this.continuation = continuation;
+    }
+
+    public int getGetSale() {
+        return getSale;
+    }
+
+    public void setGetSale(int getSale) {
+        this.getSale = getSale;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public Date getDateSale() {
+        return dateSale;
+    }
+
+    public void setDateSale(Date dateSale) {
+        this.dateSale = dateSale;
+    }
 }
