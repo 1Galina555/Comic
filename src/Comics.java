@@ -1,12 +1,12 @@
-import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-public class Comics implements Serializable
+public class Comics extends Shop implements Comparable<Comics>
 {
    private String name_comic;//название комикса
      private String name_fio_author;//данные автора
      private String publishing_houses;//название издания
-    private Long pages;//кол-во страниц комикса
+    private int pages;//кол-во страниц комикса
     private String genre;//жанр
      private int year;//год публикации
     private int price;//себестоимость
@@ -15,7 +15,7 @@ public class Comics implements Serializable
     private  int getSale;//кол-во продаж этого комикса
     private int num;//кол-во комиксов в наличии
     private Date dateSale;
-    public Comics(String name_comic, String name_fio_author, String publishing_houses, Long pages, String genre, int year, int price, int sale, boolean continuation, int getSale,int num,Date dateSale){
+    public Comics(String name_comic, String name_fio_author, String publishing_houses, int pages, String genre, int year, int price, int sale, boolean continuation, int getSale,int num,Date dateSale){
         this.name_comic=name_comic;
         this.name_fio_author=name_fio_author;
         this.publishing_houses=publishing_houses;
@@ -54,11 +54,11 @@ public class Comics implements Serializable
         this.publishing_houses = publishing_houses;
     }
 
-    public Long getPages() {
+    public int getPages() {
         return pages;
     }
 
-    public void setPages(Long pages) {
+    public void setPages(int pages) {
         this.pages = pages;
     }
 
@@ -125,4 +125,15 @@ public class Comics implements Serializable
     public void setDateSale(Date dateSale) {
         this.dateSale = dateSale;
     }
+
+    @Override
+    public int compareTo(Comics o) {
+        return this.getYear() - o.getYear();
+    }
+    @Override
+    public String toString() {
+        return "Comic{" + "name=" + name_comic + ", fio_author:" + name_fio_author + ", Publishing_houses:" + publishing_houses + ", pages="
+                + pages + ", genre:" + genre +",year-" +year+" ,price:"+price+" ,sale="+sale+" ,continuation-"+continuation+" ,getSale="+getSale+" ,num:"+num+" ,dateSale"+dateSale+'}';
+    }
+
 }
